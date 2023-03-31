@@ -9,8 +9,6 @@ The code develop based on mbed libs.
 #include "RotaryEncoder.hpp"
 #include "PIDmotor.hpp"
 
-using namespace std::chrono;
-
 PIDmotor pidMotor(D3, D4);
 RotaryEncoder enc(D6, D7);
 
