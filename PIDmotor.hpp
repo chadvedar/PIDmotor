@@ -20,9 +20,7 @@
 
 #include "mbed.h"
 #include "PID.hpp"
-#include <chrono>
-
-using namespace std::chrono;
+#include <time.h>
 
 class PIDmotor{
     public:
@@ -32,10 +30,10 @@ class PIDmotor{
 
         float target_speed;
         float current_speed;
-        int max_pid_output = 4000;
-        int min_pid_output = -4000;
+        int max_pid_output;
+        int min_pid_output;
         int pid_output;
-        microseconds loop_freq = 40000us;
+        float loop_freq;
         int dt;
 
         void set_pid_gain(float kp, float ki, float kd, float kff);
