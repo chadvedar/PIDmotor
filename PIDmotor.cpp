@@ -18,7 +18,11 @@
 #include "PIDmotor.hpp"
 
 void PIDmotor::init(){
-    dt = loop_freq.count();
+    this->max_pid_output = 4000;
+    this->min_pid_output = -4000;
+    this->loop_freq = 0.04;
+
+    dt = loop_freq * 1000000;
     set_max_min_pid_output(max_pid_output, min_pid_output);
 
     pwm_motor_a.period_us(max_pid_output);
